@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  whatsapp-extractor:
+    build: .
+    ports:
+      - "8336:5000"
+    restart: unless-stopped
+    volumes:
+      - ./exports:/app/exports
+    environment:
+      - TZ=America/Sao_Paulo
